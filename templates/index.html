@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Predictor API (diabetes dataset)</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Form for Diabetes Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('DiabetesPredictionBySurya')}}"method="post">
+    	Enter count of Pregnancies: <input type="text" name="Pregnancies_in" placeholder=" " required="required" /><br>
+        Enter Glucose (Range: 0-199) value: <input type="text" name="Glucose_in" placeholder="Range: 0-199" required="required" /><br>
+	Enter BloodPressure(Range: 0-122) value: <input type="text" name="BloodPressure_in" placeholder="Range: 0-122" required="required" /><br>
+	Enter SkinThickness(Range: 0-99) value: <input type="text" name="SkinThickness_in" placeholder="Range: 0-99" required="required" /><br>
+       	Enter Insulin(Range: 0-846) value: <input type="text" name="Insulin_in" placeholder="Range: 0-846" required="required" /><br>
+	Enter BMI (Range: 0-67) value:<input type="text" name="BMI_in" placeholder="Range: 0-67" required="required" /><br>
+	Enter DiabetesPedigreeFunction (Range : 0.07 to 2.42) value:<input type="text" name="DiabetesPedigreeFunction_in" placeholder="Range : 0.07 to 2.42" required="required" /><br>
+	Enter Your Age: <input type="text" name="Age_in" placeholder=" " required="required" /><br>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict if Diabetic</button>
+    </form>
+
+   <br>
+   <br>
+  <b style="color:blue;font-size:24px;">{{ prediction_text }}</b> 
+
+ </div>
+
+
+</body>
+</html>
